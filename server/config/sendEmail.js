@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 if (!process.env.RESEND_API) {
-    console.log("Provide RESEND_API inside the .env file");
+    console.log("Provide RESEND_API in side the .env file");
 }
 
 const resend = new Resend(process.env.RESEND_API);
@@ -11,7 +11,7 @@ const resend = new Resend(process.env.RESEND_API);
 const sendEmail = async ({ sendTo, subject, html }) => {
     try {
         const { data, error } = await resend.emails.send({
-            from: "SuperShop <danielreifer17@gmail.com>",
+            from: "SuperShop <onboarding@resend.dev>",
             to: sendTo,
             subject: subject,
             html: html,

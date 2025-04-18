@@ -58,7 +58,7 @@ const Header = () => {
     // },[cartItem])
 
     return (
-        <header className="h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white">
+        <header className="h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white overflow-hidden">
             {!(isSearchPage && isMobile) && (
                 <div className="container mx-auto flex items-center px-2 justify-between">
                     {/**logo */}
@@ -79,7 +79,7 @@ const Header = () => {
                                 width={120}
                                 height={60}
                                 alt="logo"
-                                className="lg:hidden"
+                                className="lg:hidden max-h-full"
                             />
                         </Link>
                     </div>

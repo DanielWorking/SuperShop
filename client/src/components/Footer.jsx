@@ -11,13 +11,14 @@ const Footer = () => {
                 <p>© All Rights Reserved 2025.</p>
 
                 <div className="flex items-center gap-4 justify-center text-2xl">
-                    <a href="" className="hover:text-primary-100">
+                    {/* links to the company social media - this is why i didnt add actual links to the icons */}
+                    <a href="#" className="hover:text-primary-100">
                         <FaFacebook />
                     </a>
-                    <a href="" className="hover:text-primary-100">
+                    <a href="#" className="hover:text-primary-100">
                         <FaInstagram />
                     </a>
-                    <a href="" className="hover:text-primary-100">
+                    <a href="#" className="hover:text-primary-100">
                         <FaLinkedin />
                     </a>
                 </div>

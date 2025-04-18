@@ -104,7 +104,7 @@ export async function verifyEmailController(request, response) {
     }
 }
 
-// login controller
+//login controller
 export async function loginController(request, response) {
     try {
         const { email, password } = request.body;
@@ -178,10 +178,10 @@ export async function loginController(request, response) {
     }
 }
 
-// logout controller
+//logout controller
 export async function logoutController(request, response) {
     try {
-        const userid = request.userId; // middleware
+        const userid = request.userId; //middleware
 
         const cookiesOption = {
             httpOnly: true,
@@ -210,7 +210,7 @@ export async function logoutController(request, response) {
     }
 }
 
-// upload user avatar
+//upload user avatar
 export async function uploadAvatar(request, response) {
     try {
         const userId = request.userId; // auth middlware
@@ -240,10 +240,10 @@ export async function uploadAvatar(request, response) {
     }
 }
 
-// update user details
+//update user details
 export async function updateUserDetails(request, response) {
     try {
-        const userId = request.userId; // auth middleware
+        const userId = request.userId; //auth middleware
         const { name, email, mobile, password } = request.body;
 
         let hashPassword = "";
@@ -278,7 +278,7 @@ export async function updateUserDetails(request, response) {
     }
 }
 
-// forgot password not login
+//forgot password not login
 export async function forgotPasswordController(request, response) {
     try {
         const { email } = request.body;
@@ -324,7 +324,7 @@ export async function forgotPasswordController(request, response) {
     }
 }
 
-// verify forgot password otp
+//verify forgot password otp
 export async function verifyForgotPasswordOtp(request, response) {
     try {
         const { email, otp } = request.body;
@@ -365,8 +365,8 @@ export async function verifyForgotPasswordOtp(request, response) {
             });
         }
 
-        // if otp is not expired
-        // otp === user.forgot_password_otp
+        //if otp is not expired
+        //otp === user.forgot_password_otp
 
         const updateUser = await UserModel.findByIdAndUpdate(user?._id, {
             forgot_password_otp: "",
@@ -387,7 +387,7 @@ export async function verifyForgotPasswordOtp(request, response) {
     }
 }
 
-// reset the password
+//reset the password
 export async function resetpassword(request, response) {
     try {
         const { email, newPassword, confirmPassword } = request.body;
@@ -438,12 +438,12 @@ export async function resetpassword(request, response) {
     }
 }
 
-// refresh token controler
+//refresh token controler
 export async function refreshToken(request, response) {
     try {
         const refreshToken =
             request.cookies.refreshToken ||
-            request?.headers?.authorization?.split(" ")[1]; // [ Bearer token]
+            request?.headers?.authorization?.split(" ")[1]; /// [ Bearer token]
 
         if (!refreshToken) {
             return response.status(401).json({
@@ -495,7 +495,7 @@ export async function refreshToken(request, response) {
     }
 }
 
-// get login user details
+//get login user details
 export async function userDetails(request, response) {
     try {
         const userId = request.userId;
